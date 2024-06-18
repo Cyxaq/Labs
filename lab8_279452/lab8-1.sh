@@ -1,5 +1,20 @@
 #!/bin/bash
 
+help(){
+	echo
+	echo "Użycie: "
+	echo "Po urochomieniu skryptu podaj nazwe waluty"
+	echo "Skrypt pokazuje kurs wporwadzonej waluty w ciągu ostatnich pięciu dni"
+}
+
+
+if [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]
+then
+	help
+	exit 0
+fi
+
+
 
 echo "Podaj nazwe waluty wg standartu ISO 4217 (np. pln)"
 read name
