@@ -3,8 +3,13 @@
 help(){
 	echo
 	echo "Użycie: "
+	echo
 	echo "Po urochomieniu skryptu podaj nazwe waluty"
+	echo '(Np. czk)'
+	echo
 	echo "Skrypt pokazuje kurs wporwadzonej waluty w ciągu ostatnich pięciu dni"
+	echo
+	echo "Oprocz tego pokazuje zmiane kursu (dodatnia liczba oznacza ze kurs wzrosl, ujemna - sie zmniejszyl)"
 }
 
 
@@ -22,16 +27,27 @@ read name
 echo $data
 
 
-url="http://api.nbp.pl/api/exchangerates/rates/b/$name/last/5/?format=json" 
+url="http://api.nbp.pl/api/exchangerates/rates/a/$name/last/5/?format=json" 
 
 json=$(curl $url)
+
+if [[ "$json" == *"Brak danych"* ]]
+then
+	echo "brak danych"
+	exit
+fi
+
+if [[ "$json" == *"404"* ]]
+then
+	echo "blad"
+	exit
+fi
 
 mids=($(echo "$json" | jq -r '.rates[].mid'))
 
 k=0
 
-clear
-
+echo "kursy waluty ($name) w ciagu pieciu ostatnich dni"
 echo ${mids[@]}
 
 k=${#mids[@]}
@@ -40,11 +56,12 @@ i=1
 
 q=${mids[0]}
 
+echo
 
+echo "zmiany kursu: "
 while [ $i -lt 5 ]
 do
 	w=${mids[$i]}
-	#let roz=$w-$q | bc
 	ans=$(awk "BEGIN {print $w - $q}")
 	echo $ans
 	q=${mids[$i]}
