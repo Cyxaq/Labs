@@ -36,5 +36,6 @@ project zawiera folder "files" w którym:
     
     Np. "plaintext/test1.txt" się zaszyfruje za pomocą IV i key z plika "keys/test1.key". Wynik będzie w "encrypted/test1.enc"
     
-    za każdym razem jak szfrujemy dane klucz sie generuje ramdomowo (może cały czas się zmieniać)
+    za każdym razem jak szyfrujemy dane klucz sie generuje randomowo (może cały czas się zmieniać)
+    
 """
