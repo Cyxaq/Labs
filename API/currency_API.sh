@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 help(){
 	echo
 	echo "Użycie: "
