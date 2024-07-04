@@ -1,0 +1,10 @@
+ID|________________
+1 | ###............
+2 | .--#...........
+3 | .---#####......
+4 | ......-------##
+5 | ..-------####..
+
+Średnia długość oczekiwania:  3.8
+Czas który potrzebujemy aby wykonać wszystkie procesy:  15
+Suma czasu, potrzebnego na wykonanie wszystkich procesów:  15

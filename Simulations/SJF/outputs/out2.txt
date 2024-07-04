@@ -1,0 +1,26 @@
+Legenda: 
+"-" : proces czeka 
+"#" : proces się wykonuje 
+"." : proces został wykonany albo jescze nie przyszedł 
+
+ID |__________________________
+ 1 | #........................
+ 2 | ..----####...............
+ 3 | ..#......................
+ 4 | .....#...................
+ 6 | ..-#.....................
+ 7 | ..--#....................
+10 | ...............####......
+11 | ..................-######
+
+Średnia długość oczekiwania:  1.0
+Czas który potrzebujemy aby wykonać wszystkie procesy:  25
+Suma czasu, potrzebnego na wykonanie wszystkich procesów:  19
+1 0 0 1 0 1 0
+2 4 2 4 6 10 4
+3 0 2 1 2 3 0
+4 0 5 1 5 6 0
+6 1 2 1 3 4 1
+7 2 2 1 4 5 2
+10 0 15 4 15 19 0
+11 1 18 6 19 25 1
